@@ -1,10 +1,11 @@
-# Stage 3 with MolScribe (PyTorch). Also runs the Markush branch (RDKit) and the tests.
+# Stage 3 with MolScribe (PyTorch). Also runs the Markush branch and the tests.
+# RDKit comes from MolScribe's own pip dependencies, so it is not installed from
+# conda as well: two copies in one environment overwrite each other's files.
 name: xn-stage3-molscribe
 channels:
   - conda-forge
 dependencies:
   - python=3.10
-  - rdkit
   - pip
   - pip:
       - torch

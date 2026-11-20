@@ -1,0 +1,69 @@
+{
+  "recognition_stage12_sample": {
+    "cases": 3,
+    "exact_matches": 3,
+    "details": [
+      {
+        "crop_id": "p001_c02",
+        "predicted": "Oc1ccccc1",
+        "expected": "Oc1ccccc1",
+        "exact_match": true
+      },
+      {
+        "crop_id": "p001_c03",
+        "predicted": "c1ccc2ccccc2c1",
+        "expected": "c1ccc2ccccc2c1",
+        "exact_match": true
+      },
+      {
+        "crop_id": "p001_c05",
+        "predicted": "CCCC(N)=O",
+        "expected": "CCCC(N)=O",
+        "exact_match": true
+      }
+    ]
+  },
+  "markush_sample": {
+    "cases": 4,
+    "exact_matches": 4,
+    "details": [
+      {
+        "compound_label": "5a",
+        "predicted": "Clc1ccccc1",
+        "expected": "Clc1ccccc1",
+        "exact_match": true
+      },
+      {
+        "compound_label": "5b",
+        "predicted": "Cc1ccc(F)cc1",
+        "expected": "Cc1ccc(F)cc1",
+        "exact_match": true
+      },
+      {
+        "compound_label": "5c",
+        "predicted": "COc1ccc(Br)cc1",
+        "expected": "COc1ccc(Br)cc1",
+        "exact_match": true
+      },
+      {
+        "compound_label": "5d",
+        "predicted": "Oc1ccc(C(F)(F)F)cc1",
+        "expected": "Oc1ccc(C(F)(F)F)cc1",
+        "exact_match": true
+      }
+    ]
+  },
+  "markush_scaffold_read": [
+    {
+      "paper_id": "markush_paper",
+      "page": "1",
+      "crop_id": "p001_c01",
+      "gate_label": "markush",
+      "raw_prediction": "[1*]c1ccc([2*])cc1",
+      "scaffold_smiles": "[1*]c1ccc([2*])cc1",
+      "table_source": "text_layer",
+      "table_rows": "4",
+      "outcome": "enumerated(4/4)"
+    }
+  ]
+}

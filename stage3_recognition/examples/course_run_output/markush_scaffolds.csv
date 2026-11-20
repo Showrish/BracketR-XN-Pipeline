@@ -1,0 +1,15 @@
+paper_id,page,crop_id,gate_label,raw_prediction,scaffold_smiles,table_source,table_rows,outcome
+1,8,p008_c02,molecule,*[2H],*[2H],,0,scaffold_only:no_table
+16,6,p006_c01,molecule,*.*.*.*.*.*.*.CC(C)C[C@H]1NC(=O)[C@H](C)NC(=O)[C@@H]2CCCN2C(=O)[C@H](Cc2ccccc2)NC(=O)[C@H](CC(C)C)N(C)C(=O)c2cccn2C(=O)[C@@H](CC(C)C)NC1=O,*.*.*.*.*.*.*.CC(C)C[C@H]1NC(=O)[C@H](C)NC(=O)[C@@H]2CCCN2C(=O)[C@H](Cc2ccccc2)NC(=O)[C@H](CC(C)C)N(C)C(=O)c2cccn2C(=O)[C@@H](CC(C)C)NC1=O,,0,scaffold_only:no_table
+16,6,p006_c14,molecule,*c1ccccn1,*c1ccccn1,,0,scaffold_only:no_table
+19,7,p007_c02,molecule,*c1cnc2[nH]*c(C(=O)c3c(F)ccc(NS(=O)(=O)Cc4ccccc4)c3F)c2c1,*c1cnc2[nH]*c(C(=O)c3c(F)ccc(NS(=O)(=O)Cc4ccccc4)c3F)c2c1,,0,scaffold_only:no_table
+19,12,p012_c05,molecule,*c1cnc2c(c1)c(C(=O)c1ccc(F)c(NS(=O)(=O)CCC)c1F)nn2C1CCCCO1.[He],*c1cnc2c(c1)c(C(=O)c1ccc(F)c(NS(=O)(=O)CCC)c1F)nn2C1CCCCO1.[He],,0,scaffold_only:no_table
+19,12,p012_c07,molecule,*c1cnc2[nH]nc(C(=O)c3ccc(F)c(NS(=O)(=O)CCC)c3F)c2c1,*c1cnc2[nH]nc(C(=O)c3ccc(F)c(NS(=O)(=O)CCC)c3F)c2c1,,0,scaffold_only:no_table
+2,3,p003_c04,molecule,[1*]c1c([2*])c([3*])c([4*])c([5*])c1Nc1nc2ccc(C#N)cc2[nH]1,[1*]c1c([2*])c([3*])c([4*])c([5*])c1Nc1nc2ccc(C#N)cc2[nH]1,,0,scaffold_only:no_table
+2,3,p003_c05,molecule,[1*]c1c([2*])c([3*])c([4*])c([5*])c1N,[1*]c1c([2*])c([3*])c([4*])c([5*])c1N,,0,scaffold_only:no_table
+2,3,p003_c06,molecule,*.N#Cc1ccc2nc(Cl)[nH]c2c1,*.N#Cc1ccc2nc(Cl)[nH]c2c1,,0,scaffold_only:no_table
+4,6,p006_c02,molecule,*c1ccc(C2CCC(=O)NC2=O)cc1,*c1ccc(C2CCC(=O)NC2=O)cc1,,0,scaffold_only:no_table
+4,6,p006_c03,molecule,*c1ccc(N2CCC(=O)NC2=O)cc1,*c1ccc(N2CCC(=O)NC2=O)cc1,,0,scaffold_only:no_table
+4,6,p006_c04,molecule,*c1cccc2c1C(=O)N(C1CCC(=O)NC1=O)C2=O.*c1cccc2c1CN(C1CCC(=O)NC1=O)C2=O,*c1cccc2c1C(=O)N(C1CCC(=O)NC1=O)C2=O.*c1cccc2c1CN(C1CCC(=O)NC1=O)C2=O,,0,scaffold_only:no_table
+4,6,p006_c05,molecule,*c1ccccc1-c1cn(C2CCC(=O)NC2=O)nn1,*c1ccccc1-c1cn(C2CCC(=O)NC2=O)nn1,,0,scaffold_only:no_table
+6,21,p021_c03,molecule,*.*.*.*.*,*.*.*.*.*,,0,scaffold_only:no_table

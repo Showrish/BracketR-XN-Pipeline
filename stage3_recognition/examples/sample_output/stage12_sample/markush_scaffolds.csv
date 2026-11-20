@@ -1,0 +1,2 @@
+paper_id,page,crop_id,gate_label,raw_prediction,scaffold_smiles,table_source,table_rows,outcome
+sample_paper,2,p002_c02,markush,*c1ccc(C)c[c]1[Rf],*c1ccc(C)c[c]1[Rf],,0,scaffold_only:no_table

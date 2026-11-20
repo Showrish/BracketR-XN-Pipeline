@@ -1,0 +1,110 @@
+[
+  {
+    "tool": "Markush branch",
+    "paper_id": "1",
+    "outputs": 1,
+    "valid": 1,
+    "unique_valid": 1,
+    "answer_key_structures": 17,
+    "exact_matches": 0
+  },
+  {
+    "tool": "Markush branch",
+    "paper_id": "16",
+    "outputs": 2,
+    "valid": 2,
+    "unique_valid": 2,
+    "answer_key_structures": 4,
+    "exact_matches": 0
+  },
+  {
+    "tool": "Markush branch",
+    "paper_id": "19",
+    "outputs": 3,
+    "valid": 3,
+    "unique_valid": 3,
+    "answer_key_structures": 104,
+    "exact_matches": 1
+  },
+  {
+    "tool": "Markush branch",
+    "paper_id": "2",
+    "outputs": 3,
+    "valid": 3,
+    "unique_valid": 3,
+    "answer_key_structures": 34,
+    "exact_matches": 0
+  },
+  {
+    "tool": "Markush branch",
+    "paper_id": "4",
+    "outputs": 4,
+    "valid": 4,
+    "unique_valid": 4,
+    "answer_key_structures": 60,
+    "exact_matches": 0
+  },
+  {
+    "tool": "Markush branch",
+    "paper_id": "6",
+    "outputs": 1,
+    "valid": 1,
+    "unique_valid": 1,
+    "answer_key_structures": 1,
+    "exact_matches": 0
+  },
+  {
+    "tool": "MolScribe",
+    "paper_id": "1",
+    "outputs": 12,
+    "valid": 12,
+    "unique_valid": 12,
+    "answer_key_structures": 17,
+    "exact_matches": 9
+  },
+  {
+    "tool": "MolScribe",
+    "paper_id": "16",
+    "outputs": 9,
+    "valid": 9,
+    "unique_valid": 9,
+    "answer_key_structures": 4,
+    "exact_matches": 1
+  },
+  {
+    "tool": "MolScribe",
+    "paper_id": "19",
+    "outputs": 7,
+    "valid": 5,
+    "unique_valid": 5,
+    "answer_key_structures": 104,
+    "exact_matches": 3
+  },
+  {
+    "tool": "MolScribe",
+    "paper_id": "2",
+    "outputs": 12,
+    "valid": 12,
+    "unique_valid": 11,
+    "answer_key_structures": 34,
+    "exact_matches": 3
+  },
+  {
+    "tool": "MolScribe",
+    "paper_id": "4",
+    "outputs": 10,
+    "valid": 8,
+    "unique_valid": 8,
+    "answer_key_structures": 60,
+    "exact_matches": 0
+  },
+  {
+    "tool": "MolScribe",
+    "paper_id": "6",
+    "outputs": 2,
+    "valid": 2,
+    "unique_valid": 2,
+    "answer_key_structures": 1,
+    "exact_matches": 0
+  }
+]

@@ -1,0 +1,4 @@
+paper_id,page,crop_id,tool,predicted_smiles,confidence,runtime_sec,error
+sample_paper,1,p001_c02,MolScribe,Oc1ccccc1,0.8813386696765653,3.354,
+sample_paper,1,p001_c03,MolScribe,c1ccc2ccccc2c1,0.9120690803210665,0.376,
+sample_paper,1,p001_c05,MolScribe,CCCC(N)=O,0.9211912344132058,0.237,

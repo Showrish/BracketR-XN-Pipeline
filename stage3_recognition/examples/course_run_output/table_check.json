@@ -1,0 +1,178 @@
+[
+  {
+    "paper": "19",
+    "page": 4,
+    "columns": [
+      "R"
+    ],
+    "rows": 6,
+    "cells_understood": 6,
+    "cells": 6,
+    "table": [
+      {
+        "label": "1",
+        "R": "-H"
+      },
+      {
+        "label": "2",
+        "R": "-H"
+      },
+      {
+        "label": "3",
+        "R": "-H"
+      },
+      {
+        "label": "4",
+        "R": "-H"
+      },
+      {
+        "label": "5",
+        "R": "-H"
+      },
+      {
+        "label": "6",
+        "R": "-OCH3"
+      }
+    ]
+  },
+  {
+    "paper": "19",
+    "page": 5,
+    "columns": [
+      "R"
+    ],
+    "rows": 10,
+    "cells_understood": 0,
+    "cells": 10,
+    "table": [
+      {
+        "label": "1",
+        "R": "CO"
+      },
+      {
+        "label": "10e",
+        "R": "CH=CH"
+      },
+      {
+        "label": "10a",
+        "R": "CH2"
+      },
+      {
+        "label": "10f",
+        "R": "(CO)-(CO)"
+      },
+      {
+        "label": "10b",
+        "R": "S"
+      },
+      {
+        "label": "10g",
+        "R": "(COH)-(COH)"
+      },
+      {
+        "label": "10c",
+        "R": "SO"
+      },
+      {
+        "label": "10h",
+        "R": "CONH"
+      },
+      {
+        "label": "10d",
+        "R": "SO2"
+      },
+      {
+        "label": "10i",
+        "R": "NHCO"
+      }
+    ]
+  },
+  {
+    "paper": "19",
+    "page": 6,
+    "columns": [
+      "R"
+    ],
+    "rows": 19,
+    "cells_understood": 18,
+    "cells": 19,
+    "table": [
+      {
+        "label": "12a",
+        "R": "-CH3"
+      },
+      {
+        "label": "12j",
+        "R": "-phenyl"
+      },
+      {
+        "label": "12b",
+        "R": "-CH2-CH3"
+      },
+      {
+        "label": "12k",
+        "R": "-benzyl"
+      },
+      {
+        "label": "1",
+        "R": "nC3H7"
+      },
+      {
+        "label": "12l",
+        "R": "-ethylphenyl"
+      },
+      {
+        "label": "12c",
+        "R": "cyclo-prop"
+      },
+      {
+        "label": "12m",
+        "R": "-(CH2)2-CF3"
+      },
+      {
+        "label": "12d",
+        "R": "nC4H9"
+      },
+      {
+        "label": "12n",
+        "R": "-CH2-C(O)-CH3"
+      },
+      {
+        "label": "12e",
+        "R": "-CH2-iprop"
+      },
+      {
+        "label": "12o",
+        "R": "-CH2-C(OH)-CH3"
+      },
+      {
+        "label": "12f",
+        "R": "nC5H11"
+      },
+      {
+        "label": "12p",
+        "R": "-CH2-(o)F-phenyl"
+      },
+      {
+        "label": "12g",
+        "R": "-(CH2)2-iprop"
+      },
+      {
+        "label": "12q",
+        "R": "-CH2-(m)F-phenyl"
+      },
+      {
+        "label": "12h",
+        "R": "nC6H13"
+      },
+      {
+        "label": "12r",
+        "R": "-CH2-(p)F-phenyl"
+      },
+      {
+        "label": "12i",
+        "R": "c-hexyl"
+      }
+    ]
+  }
+]

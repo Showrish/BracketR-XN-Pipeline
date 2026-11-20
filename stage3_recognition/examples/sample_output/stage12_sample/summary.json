@@ -1,0 +1,25 @@
+{
+  "manifest": "/content/repo/stage1_2_detection/examples/sample_output/manifest.csv",
+  "crops": {
+    "molecule": 3,
+    "markush": 1
+  },
+  "missing_crops": [],
+  "tools": {
+    "molscribe": {
+      "predictions": 3,
+      "errors": 0,
+      "empty": 0,
+      "mean_confidence": 0.905
+    }
+  },
+  "markush": {
+    "scaffolds": 1,
+    "from_markush_crops": 1,
+    "from_molecule_crops": 0,
+    "compounds_built": 0,
+    "outcomes": {
+      "scaffold_only:no_table": 1
+    }
+  }
+}

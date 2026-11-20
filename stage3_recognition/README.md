@@ -100,9 +100,23 @@ No paths or credentials are hard-coded. Every location is a command-line argumen
 
 ## Testing evidence
 
-**Tests.** `conda run -n xn-stage3-molscribe python -m pytest stage3_recognition/tests -q`. They use a stand-in recognizer, so they need no model download or GPU, and they cover: reading stage 1–2's real sample manifest, the output column order, the margin and RGB conversion, the placeholder fix on real DECIMER outputs from Phase 1, substituent conversion, table reading (a real PDF text layer, side-by-side tables, columns before R, notes after labels, rejection of running text), building compounds (numbered, by order, H cells, unknown cells, mismatches) and two end-to-end runs. In the environment used to write the module (no RDKit), 24 passed and the 6 tests that build molecules with RDKit were skipped; they run in `xn-stage3-molscribe`, which has RDKit.
+All results below are saved in this folder: `examples/sample_output/` (sample run), `examples/course_run_output/` (course papers) and the test suite in `tests/`.
 
-**Real input 1: the table reader on the six course papers** (`python -m stage3_recognition.examples.check_tables --pdf-dir <course PDFs>`). This step needs no model, so it was run directly on the real PDFs:
+**Tests.** `conda run -n xn-stage3-molscribe python -m pytest stage3_recognition/tests -q` runs 30 tests with a stand-in recognizer, so they need no model download or GPU. They cover reading stage 1–2's real sample manifest, the output column order, the margin and RGB conversion, the placeholder fix on real DECIMER outputs from Phase 1, substituent conversion, table reading (a real PDF text layer, side-by-side tables, columns before R, notes after labels, rejection of running text), building compounds (numbered, by order, H cells, unknown cells, mismatches) and three end-to-end runs. In the environment used to write the module, which has no RDKit, 24 passed and the 6 that build molecules were skipped. The compound-building code also ran for real in the sample run below.
+
+**Sample run with the real model** (`python -m stage3_recognition.examples.run_sample`, Colab T4 GPU, MolScribe checkpoint `swin_base_char_aux_1m680k.pth`). Two inputs whose answers are known:
+
+| Input | Expected | Stage 3 output | Result |
+|---|---|---|---|
+| Stage 1–2 sample, crop `p001_c02` | phenol | `Oc1ccccc1` (confidence 0.88) | exact match |
+| Stage 1–2 sample, crop `p001_c03` | naphthalene | `c1ccc2ccccc2c1` (0.91) | exact match |
+| Stage 1–2 sample, crop `p001_c05` | butanamide | `CCCC(N)=O` (0.92) | exact match |
+| Stage 1–2 sample, Markush crop `p002_c02` (R1, R2, X, no table) | flagged, nothing built | read as `*c1ccc(C)c[c]1[Rf]`, `scaffold_only:no_table` | as expected |
+| Markush sample scaffold (R1, R2) + table of 5a–5d | 4 compounds | scaffold read as `[1*]c1ccc([2*])cc1`, table found in the text layer, 4 compounds built | **4 / 4 exact** |
+
+MolScribe turned the R1 and R2 labels into numbered attachment points, so each column was paired with its point by number, and the four compounds came out as chlorobenzene, 4-fluorotoluene, 4-bromoanisole and 4-(trifluoromethyl)phenol. The one Markush drawing with no table was passed on as a flagged scaffold instead of a guess. That drawing also shows a weakness: the X label was read as the element Rf.
+
+**Real input 1: the table reader on the six course papers** (`examples/check_tables.py`; run while writing the module, and again in Colab with identical results, saved in `examples/course_run_output/table_check.json`):
 
 | Paper | Tables found | Rows | Cells turned into structures |
 |---|---|---|---|
@@ -113,16 +127,28 @@ No paths or credentials are hard-coded. Every location is a command-line argumen
 
 Before the side-by-side and plausibility rules were added, the reader also "found" one-row tables in the running text of papers 2 and 16 (a page number followed by a DOI) and read only the left half of the page 6 table. Both problems are covered by tests now.
 
-**Sample run with the real model** (`python -m stage3_recognition.examples.run_sample`, in `xn-stage3-molscribe`). Two inputs with known answers:
-1. Stage 1–2's own sample output: three molecule crops from Jirapa's synthetic paper (phenol, naphthalene, butanamide) and one Markush drawing with no R-group table, which should come out as `scaffold_only:no_table`.
-2. `examples/sample_input/markush_sample/`: a para-disubstituted benzene scaffold (R1, R2) with a real-text table of four compounds (5a–5d), which should give chlorobenzene, 4-fluorotoluene, 4-bromoanisole and 4-(trifluoromethyl)phenol.
+**Real input 2: the whole chain on the course papers** (Colab: stage 1–2 on the six PDFs, then stage 3, then `examples/check_course_papers.py`). A structure counts only if its canonical SMILES exactly matches the paper's answer key, each structure once. This checks what stage 3 produces on real input; it is not the group's official scoring (stage 5).
 
-Outputs go to `examples/sample_output/` (predictions, Markush files, `metrics.json` with exact matches against the answers).
+| Paper | Crops from stage 1–2 | Valid SMILES | Structures found | In answer key |
+|---|---|---|---|---|
+| 1 | 12 | 12 | 9 | 17 |
+| 2 | 12 | 12 | 3 | 34 |
+| 4 | 10 | 8 | 0 | 60 |
+| 6 | 2 | 2 | 0 | 1 |
+| 16 | 9 | 9 | 1 | 4 |
+| 19 | 7 | 5 | 3 | 104 |
+| **Total** | **52** | **48** | **16** | **220** |
 
-**Real input 2: the whole chain on the course papers.** The Colab notebook runs stage 1–2 on the six PDFs, then stage 3, then `examples/check_course_papers.py`, which counts exact matches against the answer key per paper. This is a sanity check of what stage 3 produces on real input, not the group's official scoring (stage 5).
+How to read this:
+- **Recognition is strong when the crop is a clean molecule.** In paper 1, 9 of 12 crops matched the answer key exactly. All 9 correct readings had confidence of about 0.90 or higher, and the 3 wrong ones had 0.18, 0.45 and 0.54.
+- **Confidence separates junk well.** All 10 readings below 0.2 confidence are long carbon chains or broken fragments, the signature of an image that is not a molecule (a chart or table that passed the gate) or of a misread crop. Stage 4 can use this.
+- **The ceiling is set by the crops.** Stage 1–2 kept 52 crops for 220 molecules, so most answer-key structures never reached stage 3. Paper 19's R-group tables (pages 4–6) were read correctly, but no scaffold crop came from those pages, so 3b had nothing to expand there.
+- **The Markush routing works on real crops.** 14 `molecule` crops came back with attachment points (for example, a phenyl ring with R1–R5 in paper 2), were sent to 3b, and were passed on as flagged scaffolds, because none had an R-group table in the text layer of its page or the next one.
+- **Two fixes for stage 4–5, found in this run.** (1) 17 readings have more than one fragment (e.g. `.[He]`, `.[Co]`, `CC.`), and keeping only the largest fragment would turn some into matches: paper 19's scaffold B9 was read correctly apart from a stray `[He]`. (2) The answer key writes attachment points as `[*:1]` while MolScribe writes `[1*]`, so scaffold entries should be compared with their labels removed.
 
 ## Limitations (please read before trusting the numbers)
 
+- **Few scaffolds reach 3b on real papers.** Stage 1–2 labelled no course-paper crop `markush`, and its 52 crops did not include the scaffolds drawn above paper 19's tables, so on the course papers 3b could only flag scaffolds, not build compounds.
 - **Scaffolds without attachment points cannot be expanded.** In Phase 1, MolScribe left the attachment point out of 31 of 43 Markush images, often drawing a carbon instead. Those crops come out as `scaffold_only:no_attachment_points`.
 - **Image-only tables are not read.** The table reader needs a text layer. Tables pasted as images need the CSV option (OCR is not implemented).
 - **Linkers and variable ring atoms are not supported.** A column whose groups join two parts of the scaffold (paper 19, page 5) or replace a ring atom (columns A and B on page 4) needs a different scaffold model. Those rows are reported, not built.
@@ -130,13 +156,14 @@ Outputs go to `examples/sample_output/` (predictions, Markush files, `metrics.js
 - **Table layout:** each header cell must be one word between R columns (a two-word header cell such as `IC50 (nM)` is fine after the last R column), and table cells must not contain spaces.
 - **Pairing by order** (when the scaffold's attachment points carry no numbers) assumes the points appear in the same order as the table columns. Such compounds are marked `ok_assumed_column_order`.
 - **Substituents** outside the dictionary and the simple formula patterns, including IUPAC names, are reported as unknown.
-- **No `markush` labels on the course papers yet:** stage 1–2 found no R-group text in the course figures (no text layer, OCR off), so on those papers 3b only runs on `molecule` crops whose reading has attachment points.
-- **The DECIMER adapter** is a thin wrapper around `predict_SMILES` and was not run in the environment used to write this.
+- **Misread labels.** MolScribe sometimes reads a text label as an element (an X label as `Rf`, stray `[He]` or `[Co]` fragments). These are passed on unchanged, so stage 4 can clean or flag them.
+- **The DECIMER adapter** is a thin wrapper around `predict_SMILES` and was not run for these results (MolScribe only).
 
 ## Integration notes for the other stages
 
 - Stage 4 should read every `predictions_<tool>.csv` plus `markush_compounds.csv`, and join on `paper_id, page, crop_id`. A scaffold that was expanded also appears in `predictions_molscribe.csv` with its attachment points (`*`), so stage 4 should drop predictions containing `*` once the compounds are built.
 - Run stage 3 once per environment into the same `--out` folder. The MolScribe run also does 3b.
+- From the course-paper run: keep the largest fragment of each SMILES before scoring (17 of 52 readings have more than one fragment), use MolScribe's `confidence` to flag or drop readings below about 0.2, and compare attachment points with their labels removed (`[1*]` here, `[*:1]` in the answer key).
 - If the group changes column names, only `handoff.py` needs to change.
 
 ## References

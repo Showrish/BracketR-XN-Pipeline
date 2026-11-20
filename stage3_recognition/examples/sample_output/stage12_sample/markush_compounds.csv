@@ -1,0 +1,2 @@
+paper_id,page,crop_id,compound_label,smiles,method
+sample_paper,2,p002_c02,,*c1ccc(C)c[c]1[Rf],scaffold_only:no_table

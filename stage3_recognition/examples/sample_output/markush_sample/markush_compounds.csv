@@ -1,0 +1,5 @@
+paper_id,page,crop_id,compound_label,smiles,method
+markush_paper,1,p001_c01,5a,Clc1ccccc1,enumerated_text_layer
+markush_paper,1,p001_c01,5b,Cc1ccc(F)cc1,enumerated_text_layer
+markush_paper,1,p001_c01,5c,COc1ccc(Br)cc1,enumerated_text_layer
+markush_paper,1,p001_c01,5d,Oc1ccc(C(F)(F)F)cc1,enumerated_text_layer

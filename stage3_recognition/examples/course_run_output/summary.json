@@ -1,0 +1,25 @@
+{
+  "manifest": "/content/out/stage12/manifest.csv",
+  "crops": {
+    "molecule": 52,
+    "markush": 0
+  },
+  "missing_crops": [],
+  "tools": {
+    "molscribe": {
+      "predictions": 52,
+      "errors": 0,
+      "empty": 0,
+      "mean_confidence": 0.649
+    }
+  },
+  "markush": {
+    "scaffolds": 14,
+    "from_markush_crops": 0,
+    "from_molecule_crops": 14,
+    "compounds_built": 0,
+    "outcomes": {
+      "scaffold_only:no_table": 14
+    }
+  }
+}
