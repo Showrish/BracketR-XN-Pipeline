@@ -1,0 +1,8 @@
+{
+  "true_molecules": 4,
+  "found": 4,
+  "recall": 1.0,
+  "non_molecule_items": 6,
+  "false_accepts": 0,
+  "markush_ok": true
+}

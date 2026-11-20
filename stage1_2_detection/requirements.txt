@@ -1,0 +1,17 @@
+# Core (needed to run stage 1-2)
+numpy>=1.24
+opencv-python-headless>=4.8
+scikit-image>=0.21
+Pillow>=10.0
+pdf2image>=1.16
+PyYAML>=6.0
+
+# Optional
+# pytesseract>=0.3       # OCR fallback for figures without a PDF text layer (needs the tesseract binary)
+# decimer-segmentation   # alternative detector backend (needs Python 3.10 + TensorFlow)
+
+# Tests / sample generator
+pytest>=7.0
+reportlab>=4.0
+
+# System package (not pip): poppler-utils  ->  `apt-get install poppler-utils` / `brew install poppler`

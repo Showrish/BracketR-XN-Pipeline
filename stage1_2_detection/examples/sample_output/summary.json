@@ -1,0 +1,21 @@
+{
+  "total_regions": 9,
+  "by_label": {
+    "not_molecule": 5,
+    "molecule": 3,
+    "markush": 1
+  },
+  "reject_reasons": {
+    "text_block_text_layer": 2,
+    "no_diagonal_bond_angles": 1,
+    "text_block_rows": 1,
+    "chart_or_table_axes": 1
+  },
+  "by_paper": {
+    "sample_paper": {
+      "not_molecule": 5,
+      "molecule": 3,
+      "markush": 1
+    }
+  }
+}

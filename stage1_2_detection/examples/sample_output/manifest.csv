@@ -1,0 +1,10 @@
+paper_id,crop_id,crop_path,source_pdf,page,x,y,width,height,dpi,label,gate_score,reason,markush_evidence,detector
+sample_paper,p001_c01,rejected/paper_sample_paper/p001_c01.png,sample_paper.pdf,1,267,241,1988,421,300,not_molecule,0.267,text_block_text_layer(words=66),,classical
+sample_paper,p001_c02,crops/paper_sample_paper/p001_c02.png,sample_paper.pdf,1,425,837,233,404,300,molecule,1.0,"ok(bond_lines=16, rings=1)",,classical
+sample_paper,p001_c03,crops/paper_sample_paper/p001_c03.png,sample_paper.pdf,1,1383,837,407,259,300,molecule,1.0,"ok(bond_lines=22, rings=2)",,classical
+sample_paper,p001_c04,rejected/paper_sample_paper/p001_c04.png,sample_paper.pdf,1,387,1397,849,558,300,not_molecule,0.492,no_diagonal_bond_angles,,classical
+sample_paper,p001_c05,crops/paper_sample_paper/p001_c05.png,sample_paper.pdf,1,1554,1483,535,278,300,molecule,0.75,"ok(bond_lines=13, rings=0)",,classical
+sample_paper,p002_c01,rejected/paper_sample_paper/p002_c01.png,sample_paper.pdf,2,1137,354,1092,392,300,not_molecule,0.313,text_block_rows(letters=64),,classical
+sample_paper,p002_c02,crops/paper_sample_paper/p002_c02.png,sample_paper.pdf,2,401,364,493,421,300,markush,1.0,"ok(bond_lines=20, rings=1)",R1 R2 X,classical
+sample_paper,p002_c03,rejected/paper_sample_paper/p002_c03.png,sample_paper.pdf,2,387,1189,849,558,300,not_molecule,0.75,chart_or_table_axes,,classical
+sample_paper,p002_c04,rejected/paper_sample_paper/p002_c04.png,sample_paper.pdf,2,268,2325,1952,257,300,not_molecule,0.274,text_block_text_layer(words=38),,classical

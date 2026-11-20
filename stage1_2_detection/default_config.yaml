@@ -1,0 +1,22 @@
+# Default settings for stage 1-2. Every value can be overridden here.
+# Sizes are in inches so they do not depend on the render dpi.
+render:
+  dpi: 300
+detect:
+  backend: classical        # classical | decimer (needs decimer-segmentation)
+  merge_gap_in: 0.07
+  pad_in: 0.06
+  min_side_in: 0.30
+  max_page_fraction: 0.60
+  split_enabled: true      # split molecules glued to charts/other panels
+  split_gap_in: 0.02
+  join_gap_in: 0.05
+gate:
+  min_score: 0.50
+  min_bond_segments: 4
+  min_diagonal_fraction: 0.15
+  max_ink_ratio: 0.30
+  max_midtone_fraction: 0.35
+  max_color_fraction: 0.10 # raise for papers that draw molecules in colour
+  min_bond_len_in: 0.05
+  use_ocr_fallback: false
