@@ -1,0 +1,17 @@
+# Default settings for stage 3. Every value can be overridden here or on the command line.
+# Sizes are in inches so they do not depend on the dpi of the crops.
+tools: [molscribe]            # molscribe | decimer (each runs in its own environment)
+preprocess:
+  pad_in: 0.05                # white margin around each crop (0 = off)
+  background: 255
+  save_prepared: true
+molscribe:
+  hf_repo: yujieq/MolScribe
+  checkpoint: swin_base_char_aux_1m680k.pth
+  device: auto                # auto | cpu | cuda
+markush:
+  enabled: true
+  scaffold_tool: molscribe
+  table_source: text_layer    # text_layer | none
+  search_next_page: true
+  from_molecule_crops: true   # the gate can miss scaffolds whose R-groups are only in a table

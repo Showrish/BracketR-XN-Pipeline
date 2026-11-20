@@ -1,0 +1,14 @@
+# Core (needed to run stage 3 without the models, e.g. for the tests)
+Pillow>=10.0
+PyYAML>=6.0
+rdkit>=2023.9          # Markush branch: builds compounds with molzip
+
+# Recognizers: install one per environment (see envs/)
+#   MolScribe: torch, huggingface_hub, git+https://github.com/thomas0809/MolScribe.git
+#   DECIMER:   decimer   (Python 3.10 + TensorFlow)
+
+# Tests and sample generator
+pytest>=7.0
+reportlab>=4.0
+
+# System package (not pip): poppler-utils  ->  `apt-get install poppler-utils` / `brew install poppler`

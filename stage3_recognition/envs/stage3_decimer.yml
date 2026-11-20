@@ -1,0 +1,12 @@
+# Stage 3 with DECIMER (TensorFlow). Kept apart from MolScribe because the two
+# frameworks pin conflicting versions. Run with --tools decimer --no-markush.
+name: xn-stage3-decimer
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - decimer
+      - Pillow
+      - PyYAML

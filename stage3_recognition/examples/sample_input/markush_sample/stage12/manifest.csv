@@ -1,0 +1,2 @@
+paper_id,crop_id,crop_path,source_pdf,page,x,y,width,height,dpi,label,gate_score,reason,markush_evidence,detector
+markush_paper,p001_c01,crops/paper_markush_paper/p001_c01.png,../markush_paper.pdf,1,520,448,209,540,300,markush,1.0,hand-made test case,R1 R2,synthetic
