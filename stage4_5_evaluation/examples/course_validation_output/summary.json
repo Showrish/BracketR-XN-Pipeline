@@ -1,0 +1,15 @@
+{
+  "input_rows": 66,
+  "accepted_rows": 29,
+  "combined_rows": 29,
+  "min_confidence": 0.2,
+  "largest_fragment": true,
+  "evaluated": true,
+  "statuses": {
+    "accepted": 29,
+    "invalid_smiles": 4,
+    "low_confidence": 7,
+    "unresolved_markush": 14,
+    "unresolved_scaffold": 12
+  }
+}

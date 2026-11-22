@@ -1,0 +1,5 @@
+paper_id,page,crop_id,tool,compound_label,raw_smiles,canonical_smiles,confidence,method,status,error,source_file,disagreement
+markush_paper,1,p001_c01,Markush,5a,Clc1ccccc1,Clc1ccccc1,,enumerated_text_layer,accepted,,markush_compounds.csv,False
+markush_paper,1,p001_c01,Markush,5b,Cc1ccc(F)cc1,Cc1ccc(F)cc1,,enumerated_text_layer,accepted,,markush_compounds.csv,False
+markush_paper,1,p001_c01,Markush,5c,COc1ccc(Br)cc1,COc1ccc(Br)cc1,,enumerated_text_layer,accepted,,markush_compounds.csv,False
+markush_paper,1,p001_c01,Markush,5d,Oc1ccc(C(F)(F)F)cc1,Oc1ccc(C(F)(F)F)cc1,,enumerated_text_layer,accepted,,markush_compounds.csv,False

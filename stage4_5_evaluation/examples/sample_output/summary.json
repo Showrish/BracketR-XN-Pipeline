@@ -1,0 +1,11 @@
+{
+  "input_rows": 4,
+  "accepted_rows": 4,
+  "combined_rows": 4,
+  "min_confidence": 0.2,
+  "largest_fragment": true,
+  "evaluated": true,
+  "statuses": {
+    "accepted": 4
+  }
+}
